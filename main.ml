@@ -1,3 +1,4 @@
+open Printf
 open Conversion
 
 (*
@@ -22,7 +23,7 @@ type fnc = clause list
 
 let rec string_of_formula f =
     match f with
-    |Var n -> n
+    |Var n -> string_of_int n
     |And (p, q) ->
     sprintf "(%s and %s)" (string_of_formula p) (string_of_formula q)
     |Or (p, q) ->
