@@ -20,15 +20,15 @@ type fnc = clause list
 
 (*Une fonction pour l'affichage*)
 
-let rec string_of_formule f =
+let rec string_of_formula f =
     match f with
-    |Var s -> s
+    |Var n -> n
     |And (p, q) ->
-    sprintf "(%s and %s)" (string_of_formule p) (string_of_formule q)
-    |Ou (p, q) ->
-    sprintf "(%s or %s)" (string_of_formule p) (string_of_formule q)
+    sprintf "(%s and %s)" (string_of_formula p) (string_of_formula q)
+    |Or (p, q) ->
+    sprintf "(%s or %s)" (string_of_formula p) (string_of_formula q)
     |Not p ->
-    sprintf "(not %s)" (string_of_formule p)
+    sprintf "(not %s)" (string_of_formula p)
 
 
 (*
