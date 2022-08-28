@@ -73,7 +73,7 @@ let rec prop_to_propfnc f =
     |Var n -> f
     |Not (Var n) -> f
     |And (p, q) -> And (prop_to_propfnc p, prop_to_propfnc q)
-    |Or (p, q) -> or_distribution (prop_to_propfnc p, prop_to_propfnc q)
+    |Or (p, q) -> or_distribution (prop_to_propfnc p) (prop_to_propfnc q)
     |Not (Not p) -> p
     |Not (And (p, q)) -> prop_to_propfnc (Or (Not p, Not q))
     |Not (Or (p, q)) -> prop_to_propfnc (And (Not p, Not q))
