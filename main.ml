@@ -45,4 +45,4 @@ let conclusion = Var 1
 *)
 
 let theorem_pre_conversion = (Not conclusion)::theory
-let theorem = List.map (Conversion.convert) theorem_pre_conversion
+let theorem = List.map (Conversion.convert theorem_pre_conversion)
